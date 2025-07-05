@@ -24,7 +24,7 @@ export const picturesApi = createApi({
     
     getPicture: builder.query<Picture, number>({
       query: (id) => `pictures/${id}`,
-      providesTags: (result, error, id) => [{ type: 'Pictures', id }],
+      providesTags: (_result, _error, id) => [{ type: 'Pictures', id }],
     }),
     
     addPicture: builder.mutation<Picture, Omit<Picture, 'id'>>({
